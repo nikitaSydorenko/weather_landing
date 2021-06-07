@@ -10,6 +10,13 @@ body{
     overflow-x:hidden ;
 }
 
+.title span {
+    font-size: 20px;
+    line-height: 1.2;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fc6a42;}
+
 .firstBlock{
     background: url(images/backgr_1575.png);
     width: 100%;
@@ -108,6 +115,7 @@ body{
 
 #menu li:hover {
     color: tomato;
+    cursor: pointer;
 }
 .icons {
     padding-top: 10px;
@@ -328,23 +336,26 @@ body{
 .perfectFeatures{
     display: flex;
 
-    padding-top: 50px;
+    padding-top: 30px;
     justify-content: space-around;
     flex-wrap: wrap;
     width: 70%;
     margin: 0 auto;
 }
 
-.perfectFeatures div{
+.perfectFeatures__item{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     width: 100%;
     min-width: 150px;
     max-width: 150px;
     padding-top: 15px;
 
+}
+.perfectFeatures img{
+    width: 78px;
+    height: 62px;
 }
 
 .perfectFeatures h4{
@@ -731,6 +742,11 @@ footer{
 
 footer .title{
     padding-top: 20px;
+    color: #648cff;
+}
+
+.title h3 {
+    color: #648cff;
 }
 
 .iconsFooter{
@@ -753,8 +769,19 @@ footer span{
 }
 
 @media screen and (min-width: 768px) {
+    .firstBlock {
+        background-position-x: center;
+    }
+    .titleFooter__stores{
+        flex-direction: row;
+        justify-content: center;
+    }
+    .titleFooter__stores img{
+        padding: 5px;
+    }
     .header .title h3{
         font-size: 26px;
+
     }
     .title__block h1 {
         font-size: 36px;
@@ -765,13 +792,27 @@ footer span{
     .phoneImage{
         width: 60%;
     }
+    .sunnyScreen__screen, .screenLeft{
+        width: 40%;
+    }
 }
 
 @media screen and (min-width: 1024px) {
+
+    .firstBlock{
+        background-position: bottom;
+    }
+
+    .header__content{
+        display: flex;
+        flex-direction: row;
+    }
+
     .container{
         margin: 0 auto;
         width: 80%;
     }
+
     #menuToggle{
         display: none;
     }
@@ -786,16 +827,228 @@ footer span{
         margin: 0;
         color: #e1e1e1;
     }
-    .header ul{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
+
+    #menu li {
+        padding: 15px;
+        font-size: 16px;
     }
 
     .phoneImage{
-        width: 40%;
+        width: 100%;
     }
     .icons{
+        color: #ffffff;
+        padding: 15px;
+    }
+    .title__block {
+        text-align: left;
+        width: 50%;
         padding: 0;
+    }
+    .phone {
+        width: 50%;
+    }
+    .title__block h1 {
+        font-size: 50px;
+    }
+    .title__block p {
+        padding-top: 20px;
+        font-size: 18px;
+        line-height: 30px;
+        font-weight: 400;
+    }
+    .buttonBlock{
+        justify-content: flex-start;
+    }
+    .perfectFeatures img {
+        padding-top: 10px;
+    }
+    .perfectFeatures {
+        flex-wrap: nowrap;
+        width: 90%;
+    }
+    .caption__block h3{
+        font-size: 26px;
+    }
+    .caption__block p {
+        font-size: 16px;
+    }
+
+    .gallery {
+        height: 640px;
+
+    }
+
+    .gallery-container{
+        height: 100%;
+        padding: 0px;
+    }
+
+    .gallery-controls{
+        margin: 0px;
+    }
+    .gallery-container .gallery-item{
+        height: 400px;
+        width: 200px;
+    }
+    .gallery-item-3{
+
+        height: 500px !important;
+        width: 270px !important;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+
+    .header{
+        height: auto;
+        padding: 0;
+        padding-top: 10px;
+    }
+    .title__block {
+        text-align: left;
+        width: 40%;
+        padding: 0;
+    }
+    .title__block p {
+        width: 70%;
+    }
+    .phone{
+        padding-left: 50px;
+    }
+    .phoneImage img{
+        width: auto;
+    }
+    #menu li {
+        padding: 0px 50px 0px 50px;
+        font-size: 18px;
+        line-height: 21px;
+    }
+    .buttonBlock .download, .buttonBlock .features{
+        width: 158px;
+        height: 52px;
+        font-size: 18px;
+        line-height: 1.2;
+        font-weight: 700;
+        color: #ffffff;
+    }
+    .sunnyScreen__screen, .screenLeft{
+        width: 30%;
+    }
+    .perfectFeatures{
+        padding-top: 70px;
+        padding-bottom: 50px;
+    }
+    .perfectFeatures__item{
+        flex-direction: row;
+        max-width: 359px;
+    }
+    .perfectFeatures h4 {
+        font-size: 24px;
+    }
+    .perfectFeatures p {
+        font-size: 16px;
+    }
+    .caption__block{
+        padding-top: 70px;
+    }
+    .desc{
+        padding-left: 25px;
+    }
+    .containerScreen{
+        flex-direction: row;
+    }
+    .screenRight img{
+        width: 130px;
+
+    }
+    .containerScreen:nth-child(2){
+        flex-direction: row-reverse;
+    }
+    .sunnyScreen__description{
+        padding-right: 100px;
+        align-items: flex-start;
+        width: 37%;
+    }
+    .screenRight {
+        padding-left: 100px;
+        align-items: flex-start;
+        width: 37%;
+    }
+    .sunnyScreen__description h3{
+        font-size: 36px;
+    }
+    .sunnyScreen__description p{
+        font-size: 24px;
+    }
+    .screenRight h3{
+        font-size: 36px;
+    }
+    .screenRight p{
+        font-size: 24px;
+    }
+    .container__comments {
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+    }
+    .container__comment {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        max-width: calc(50% - 20px);
+        padding-top: 10px;
+    }
+    .container__comment img:last-child {
+
+        align-self: flex-end;
+    }
+    footer .title {
+        min-width: max-content;
+        color: #fc6a42;
+    }
+    #menuFooter{
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .itemsFooter{
+        display: flex;
+        align-items: center;
+        width: 80%;
+        margin: 0 auto;
+        padding: 60px;
+    }
+    .titleFooter h4 {
+        font-size: 36px;
+        margin-bottom: 30px;
+        line-height: 1.2;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #ffffff;
+    }
+    .titleFooter p {
+        font-size: 18px;
+        margin-bottom: 30px;
+        line-height: 1.2;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #ffffff;
+    }
+    .titleFooter {
+        display: flex;
+        flex-direction: column;
+
+        align-items: flex-start;
+        padding: 40px;
+        padding-left: 100px;
+        width: 50%;
+        text-align: left;
+    }
+    .titleFooter__stores{
+        justify-content: initial;
     }
 }
