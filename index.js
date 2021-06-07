@@ -63,7 +63,7 @@ class Carousel {
         this.carouselControls.forEach(control => {
             galleryControlsContainer.appendChild(document.createElement('button')).className = `gallery-controls-${control}`;
 
-            document.querySelector(`.gallery-controls-${control}`).innerText = control;
+            document.querySelector(`.gallery-controls-${control}`).innerText = '';
         });
     }
 
