@@ -3,11 +3,24 @@
     padding: 0px;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
+a{
+    transform: translateY(-50%);
+}
+
 body{
     font-family: 'Ubuntu', sans-serif;
     color: #ffff;
     background-color: #ffff;
     overflow-x:hidden ;
+}
+
+hr{
+    border-color: #434769;
+    border-style: solid;
 }
 
 footer .title span {
@@ -21,7 +34,7 @@ footer .title span {
     background: url(images/backgr_1575.png);
     width: 100%;
     background-repeat: no-repeat;
-    padding-bottom: 50px;
+    padding-bottom: 100px;
 }
 
 .container {
@@ -36,7 +49,8 @@ footer .title span {
     width: 49px;
     height: 49px;
     border: none;
-    margin-top: 10px;
+    background-color: #ffffff;
+    margin-top: 30px;
     position: relative;
 }
 
@@ -208,6 +222,11 @@ footer .title span {
 
 }
 
+.rights{
+    padding: 50px;
+    text-align: right;
+}
+
 .activeMenu{
     transform: translate(-100%, 0);
 }
@@ -296,7 +315,7 @@ footer .title span {
 }
 
 .phoneImage img {
-    width: 100%;
+    width: 80%;
 
     display: flex;
     justify-content: center;
@@ -329,6 +348,7 @@ footer .title span {
 .caption__block p{
     font-size: 14px;
     line-height: 1.2;
+    padding-top: 10px;
     font-weight: 400;
     color: #999999;
 }
@@ -372,18 +392,6 @@ footer .title span {
     font-weight: 400;
     color: #aeaeae;
 }
-
-
-
-
-
-
-/*             */
-
-
-
-
-
 
 
 
@@ -483,7 +491,7 @@ footer .title span {
     left: -10px;
     padding: 5px;
     position: absolute;
-    top: 0;
+    top: -9px;
     transform: rotate(135deg) translateY(-50%);
     transition: left 0.15s ease-in-out;
     width: 4px;
@@ -546,10 +554,10 @@ footer .title span {
 
 }
 
-.screenLeft {
+.screenLeft, .sunnyScreen__screen {
     padding-top: 40px;
-    width: 70%;
-    justify-content: center;
+    width: 60%;
+
 }
 
 .screenLeft img{
@@ -599,10 +607,7 @@ footer .title span {
     color: #353854;
 }
 
-.sunnyScreen__screen{
-    padding-top: 40px;
-    width: 70%;
-}
+
 
 .sunnyScreen__screen img{
     width: 100%;
@@ -673,9 +678,30 @@ footer .title span {
     justify-content: flex-end;
 }
 
+.container__comments {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+.container__comment {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+
+    padding-top: 10px;
+}
+.container__comment img:last-child {
+
+    align-self: flex-end;
+}
+
 .container__comment p{
     font-size: 10px;
-    text-align: center;
+    padding-top: 10px;
     font-weight: 400;
     color: #353854;
 }
@@ -745,7 +771,7 @@ footer .title{
     color: #648cff;
 }
 
-.title h3 {
+footer .title h3 {
     color: #648cff;
 }
 
@@ -798,6 +824,17 @@ footer span{
 }
 
 @media screen and (min-width: 1024px) {
+    .header{
+        height: auto;
+        padding: 0;
+        padding-top: 10px;
+        width: 80%;
+        margin: 0 auto;
+    }
+    .header .title h3 {
+
+        min-width: max-content;
+    }
 
     .firstBlock{
         background-position: bottom;
@@ -859,6 +896,11 @@ footer span{
     }
     .buttonBlock{
         justify-content: flex-start;
+
+    }
+    .buttonBlock button{
+        justify-content: flex-start;
+        cursor: pointer;
     }
     .perfectFeatures img {
         padding-top: 10px;
@@ -950,11 +992,7 @@ footer span{
 
 @media screen and (min-width: 1440px) {
 
-    .header{
-        height: auto;
-        padding: 0;
-        padding-top: 10px;
-    }
+
     .title__block {
         text-align: left;
         width: 40%;
@@ -1091,8 +1129,8 @@ footer span{
         font-size: 18px;
         margin-bottom: 30px;
         line-height: 1.2;
-        font-weight: 700;
-        text-transform: uppercase;
+        font-weight: 400;
+
         color: #ffffff;
     }
     .titleFooter {
