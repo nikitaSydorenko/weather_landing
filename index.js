@@ -1,21 +1,22 @@
-let burger = document.getElementById('menuToggle')
-let menu = document.getElementById('menu');
-burger.onclick = function () {
+// let burger = document.getElementById('menuToggle')
+// let menu = document.getElementById('menu');
+// burger.onclick = function () {
+//
+//     burger.classList.toggle("isActive");
+//
+//     if (burger.className === 'isActive') {
+//         menu.classList.add("activeMenu")
+//         document.body.style.overflow = 'hidden'
+//     } else {
+//         menu.classList.remove("activeMenu");
+//         document.body.style.overflow = "auto"
+//         document.body.style.overflowX = "hidden"
+//     }
+//
+//     burger.id = 'menuToggle'
+// }
 
-    burger.classList.toggle("isActive");
-
-    if (burger.className === 'isActive') {
-        menu.classList.add("activeMenu")
-        document.body.style.overflow = 'hidden'
-    } else {
-        menu.classList.remove("activeMenu");
-        document.body.style.overflow = "auto"
-        document.body.style.overflowX = "hidden"
-    }
-
-    burger.id = 'menuToggle'
-}
-
+console.log('hello');
 
 const galleryContainer = document.querySelector('.gallery-container');
 const galleryControlsContainer = document.querySelector('.gallery-controls');
@@ -28,7 +29,6 @@ class Carousel {
         this.carouselControls = controls;
         this.carouselArray = [...items];
     }
-
 
     updateGallery() {
         this.carouselArray.forEach(el => {
@@ -47,7 +47,7 @@ class Carousel {
 
     setCurrentState(direction) {
 
-        if (direction.className == 'gallery-controls-previous') {
+        if (direction.className === 'gallery-controls-previous') {
             this.carouselArray.unshift(this.carouselArray.pop());
         } else {
             this.carouselArray.push(this.carouselArray.shift());
@@ -58,23 +58,25 @@ class Carousel {
 
     setControls() {
         this.carouselControls.forEach(control => {
-            galleryControlsContainer.appendChild(document.createElement('button')).className = `gallery-controls-${control}`;
-
-            document.querySelector(`.gallery-controls-${control}`).innerText = '';
+            galleryControlsContainer.appendChild(document.createElement('img')).className = `gallery-controls-${control}`;
+            let controls = document.querySelector(`.gallery-controls-${control}`)
+            if(control === 'previous'){
+                controls.setAttribute('src', 'images/left_arrow.png')
+            }else {
+                controls.setAttribute('src', 'images/right_arrow.png')
+            }
         });
     }
 
     useControls() {
         const triggers = [...galleryControlsContainer.childNodes];
-
         triggers.forEach(control => {
             control.addEventListener('click', e => {
                 e.preventDefault();
-
-                if (control.className == 'gallery-controls-add') {
+                if (control.className === 'gallery-controls-add') {
                     const newItem = document.createElement('img');
                     const latestItem = this.carouselArray.length;
-                    const latestIndex = this.carouselArray.findIndex(item => item.getAttribute('data-index') == this.carouselArray.length) + 1;
+                    const latestIndex = this.carouselArray.findIndex(item => item.getAttribute('data-index') === this.carouselArray.length) + 1;
 
 
                     Object.assign(newItem, {
